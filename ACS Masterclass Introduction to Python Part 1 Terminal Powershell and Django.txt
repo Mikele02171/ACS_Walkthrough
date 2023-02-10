@@ -1,0 +1,86 @@
+NOTES:
+Currently using Windows not Mac.
+
+-Download Python 3.10 from the Microsoft Store.
+-Download Visual Studio Code
+In terminal (Using Windows Powershell)
+-Run python --version (copy exactly) (if it works)
+-Then run python (type in python)
+You can run def functions, maths operations and print out strings, ints etc.. 
+-If you want to exit
+use exit() and Clt L to clear everything in terminal. 
+
+If you haven't installed git into Windows Terminal 
+
+Click on this link to download git to your Windows Terminal 
+
+https://git-scm.com/download/win
+
+Go back into Windows Powershell and type out the following 
+-git clone https://github.com/Mikele02171/ACS_Walkthrough 
+NOTE: copy where you keep your respository in your github account!
+
+
+ls
+cd ACS_Walkthrough/
+ls
+
+Trouble to install Virtual environment into Windows Powershell terminal 
+Try
+pip install --user virtualenv
+python -m virtualenv venv
+
+To activate the Virtual environment 
+If you get this error,
+venv/Scripts/activate : File C:\Users\mikel\ACS_Walkthrough\venv\Scripts\Activate.ps1 cannot be loaded because running
+scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ venv/Scripts/activate
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+Set-ExecutionPolicy Unrestricted -Scope Process
+
+Why? According to Microsoft Tech Support it might be a problem with Execution Policy Settings. To fix it,
+you should try executing Set-ExecutionPolicy Unrestricted -Scope Process (as mentioned in the comment section by @wtsiamruk)
+in your PowerShell window. This would allow running virtualenv in the current PowerShell session. 
+
+Then type the following again:
+
+venv/Scripts/activate
+
+Should get this, 
+(venv) PS C:\Users\mikel\ACS_Walkthrough> 
+
+This means your directory has entered in the virtual environment. 
+
+Type in the following one by one (i.e run it, type it, run it, etc...) in order all of them should work in this order:
+
+pip install django
+pip install gunicorn
+pip freeze > requirements.txt 
+django-admin startproject demo
+ls
+cd demo
+python manage.py startapp mypage
+
+NOTE: mypage is just a title for the app, you can change the title later. 
+
+Run this in terminal:
+code .. 
+
+NOTE: At this point you should install Visual Studio Code by now. 
+
+Type in the following one by one (i.e run it, type it, run it, etc...) all of them should work:
+python manage.py migrate 
+python manage.py runserver
+
+Open the link http://127.0.0.1:8000/ you get your first django website. 
+
+
+
+
+
+
