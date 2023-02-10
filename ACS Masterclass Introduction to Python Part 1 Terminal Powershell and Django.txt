@@ -92,10 +92,57 @@ Go back to terminal and type in the following one by one (i.e run it, type it, r
 python manage.py migrate 
 python manage.py runserver
 
-Open the link http://127.0.0.1:8000/ you get your first django website. 
+-Open the link http://127.0.0.1:8000/ you get your first django website. 
 
-Type in the following one by one (i.e run it, type it, run it, etc...) in order all of them should work in this order:
+Again, follow exactly as instructed in the ACS_masterclass/django_walkthrough.md from this github repository.
+Step E - Time to Code!
+-Create a new folder called templates, inside of your mypage directory.
+-Inside of that folder, create a file called homepage.html
+-Let's add some basic HTML code to that file, to define what our users will see. If you know your way around HTML you can add whatever you like, but here's some fun boilerplate to throw in if you prefer:
 
+NOTE: Implicitly follow exactly as it follows (must be done manually and carefully).
+
+-Navigate to the /mypage/views.py file in VSCode, and add the following code to that file:
+def homepage(request):
+    return render(request, 'homepage.html')
+
+-Next we need to define the address that this page will be available at inside our app. Let's add a urls.py file to the mypage directory:
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.homepage, name='homepage'),
+]
+
+-The page is available from within the app, right now, but next we need to make it so that we can access that app from within the project as a whole. To do this we need to add a little code to a different urls.py file - the one in the demo directory. This file already exists, so we can just add a little code to it:
+
+(Oliver's notation)
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('homepage/', include('mypage.urls'))
+]
+
+(My notation)
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('mypage.urls'))
+]
+
+
+Type in the following into terminal:
+python manage.py runserver 
+
+-Open the link http://127.0.0.1:8000/ you get your updated django website. 
+
+Type in the following into terminal one by one (i.e run it, type it, run it, etc...) in order all of them should work in this order:
 git add .
 git commit -m "<add_a_message_here_explaining_your_commit"
 git push origin main
