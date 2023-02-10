@@ -79,8 +79,13 @@ python manage.py runserver
 
 Open the link http://127.0.0.1:8000/ you get your first django website. 
 
+Type in the following one by one (i.e run it, type it, run it, etc...) in order all of them should work in this order:
 
+git add .
+git commit -m "<add_a_message_here_explaining_your_commit"
+git push origin main
 
+This concludes the demonstration!
 
 
 
