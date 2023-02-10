@@ -3,6 +3,8 @@ Currently using Windows not Mac.
 
 -Download Python 3.10 from the Microsoft Store.
 -Download Visual Studio Code
+
+
 In terminal (Using Windows Powershell)
 -Run python --version (copy exactly) (if it works)
 -Then run python (type in python)
@@ -16,16 +18,15 @@ Click on this link to download git to your Windows Terminal
 
 https://git-scm.com/download/win
 
-Go back into Windows Powershell and type out the following 
--git clone https://github.com/Mikele02171/ACS_Walkthrough 
+Go back into Windows Powershell and type in the following one by one (i.e run it, type it, run it, etc...) in order all of them should work in this order:
+git clone https://github.com/Mikele02171/ACS_Walkthrough 
 NOTE: copy where you keep your respository in your github account!
-
 
 ls
 cd ACS_Walkthrough/
 ls
 
-Trouble to install Virtual environment into Windows Powershell terminal 
+Trouble to install Virtual environment into Windows Powershell terminal?, First
 Try
 pip install --user virtualenv
 python -m virtualenv venv
@@ -73,7 +74,21 @@ code ..
 
 NOTE: At this point you should install Visual Studio Code by now. 
 
-Type in the following one by one (i.e run it, type it, run it, etc...) all of them should work:
+Follow exactly as instructed in the ACS_masterclass/django_walkthrough.md from this github repository.
+Step D - Tweaking Some Settings...
+Open that "inner" demo folder in VS Code, and you'll find a file called settings.py. Scrolling through this file, you should find a section like this:
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'mypage',
+]
+
+Go back to terminal and type in the following one by one (i.e run it, type it, run it, etc...) all of them should work:
 python manage.py migrate 
 python manage.py runserver
 
