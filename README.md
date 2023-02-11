@@ -1,4 +1,4 @@
-# ACS_Walkthrough
+# ACS MASTERCLASS: INTRODUCTION TO PYTHON
 
 Completed my ACS MASTERCLASS: INTRODUCTION TO PYTHON
 This presentation demonstrates the fundamental philosophy of the Python language. 
